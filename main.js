@@ -2,15 +2,12 @@
 function tocaSom (seletorAudio) {
     const elemento = document.querySelector(seletorAudio);
 
-    if (elemento === null) {
-        console.log('Elemento não encontrado');
-    }
-
-    if (elemento != null) {
-        if (elemento.localName === 'audio')
+    if (elemento && elemento.localName === 'audio') {
         elemento.play()
     }
-    elemento.play();
+    else {
+        console.log('Elemento não encontrado ou seletor inválido');
+    }
 }
 
 // armazena as teclas em uma constante ao invés de usar o querySelector várias vezes
